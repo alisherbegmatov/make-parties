@@ -1,7 +1,13 @@
 <!-- views/events-new.handlebars -->
 <div class="row">
-   <div class="col-lg-6 offset-lg-5">
-      <form method="POST" action="/events" class="mt-4">
+   <div class="col-lg-6 offset-lg-3 mt-5">
+     <form action="/events" method="post">
+      {{> events-form }}
+      <div class="text-right">
+        <button type="submit" class="btn btn-primary" name="button">Save</button>
+      </div>
+    </form>
+      {{!-- <form method="POST" action="/events" class="mt-4">
         <fieldset>
           <legend>New Event</legend>
           <!-- TITLE -->
@@ -22,7 +28,7 @@
         <p>
           <button type="submit">Save Event</button>
         </p>
-    </form>
+    </form> --}}
    </div>
   
 </div>
