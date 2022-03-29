@@ -22,6 +22,7 @@ app.set('view engine', 'handlebars');
 
 require('./controllers/events')(app, models);
 require('./controllers/rsvps')(app, models);
+require('./controllers/auth')(app, models);
 
 const port = process.env.PORT || 3000;
 
