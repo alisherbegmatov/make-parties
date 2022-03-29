@@ -1,22 +1,19 @@
-<!-- events-index -->
 <div class="row mt-5">
     <div class="col-lg-6 offset-lg-3">
-        <!-- Add the following two lines -->
         <h1>Reviews</h1>
         <a href="/events/new">New Event</a>
         <h1>Events</h1>
         {{#each events}}
-        <div class="card mt-3" >
-        {{!-- <img class="img-fluid" src="{{this.imgUrl}}" alt="Card image cap"> --}}
-        <img src="{{this.imgUrl}}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{this.title}}</h5>
-            <p class="card-text">{{this.desc}}</p>
-            <div class="d-flex justify-content-end">
-                <a href="#" class="btn btn-success mr-2">RSVP</a>
-                <a href="/events/{{this.id}}" class="btn btn-primary">View</a>
+        <div class="card mt-3">
+            <img src="{{this.imgUrl}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>
+                <p class="card-text">{{this.desc}}</p>
+                <div class="d-flex justify-content-end">
+                    <a href="#" class="btn btn-success mr-2">RSVP</a>
+                    <a href="/events/{{this.id}}" class="btn btn-primary">View</a>
+                </div>
             </div>
-        </div>
         </div>
         {{/each}}
 
