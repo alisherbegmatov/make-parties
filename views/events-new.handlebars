@@ -1,0 +1,28 @@
+<!-- views/events-new.handlebars -->
+<div class="row">
+   <div class="col-lg-6 offset-lg-5">
+      <form method="POST" action="/events" class="mt-4">
+        <fieldset>
+          <legend>New Event</legend>
+          <!-- TITLE -->
+          <p>
+            <label for="title">Title</label><br>
+            <input type="text" name="title" />
+          </p>
+          <p>
+            <label for="desc">Movie Title</label><br>
+            <input type="text" name="desc" />
+          </p>
+          <p>
+          <label for="imgUrl">Image Url</label><br>
+          <input type="text" placeholder="" name="imgUrl" />
+        </p>
+        </fieldset>
+        <!-- BUTTON -->
+        <p>
+          <button type="submit">Save Event</button>
+        </p>
+    </form>
+   </div>
+  
+</div>

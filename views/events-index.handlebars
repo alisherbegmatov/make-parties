@@ -1,7 +1,11 @@
 <!-- events-index -->
-{{#each events}}
- <div class="row mt-2 d-flex justify-content-center">
-    <div class="col-lg-6">
+<div class="row mt-4">
+    <div class="col-lg-6 offset-lg-3">
+        <!-- Add the following two lines -->
+        <h1>Reviews</h1>
+        <a href="/events/new">New Event</a>
+        <h1>Events</h1>
+        {{#each events}}
         <div class="card" >
         {{!-- <img class="img-fluid" src="{{this.imgUrl}}" alt="Card image cap"> --}}
         <img src="{{this.imgUrl}}" class="card-img-top" alt="...">
@@ -14,8 +18,8 @@
             </div>
         </div>
         </div>
+        {{/each}}
+
     </div>
-  </div>
-  
-  
-{{/each}}
+</div>
+
