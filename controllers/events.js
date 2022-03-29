@@ -2,6 +2,7 @@ const moment = require('moment');
 
 module.exports = function (app, models) {
   app.get('/', (req, res) => {
+    console.log(req.user)
     models.Event.findAll({ order: [['createdAt', 'DESC']] }).then((events) => {
       res.render('events-index', { events: events });
     });

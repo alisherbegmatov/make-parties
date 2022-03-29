@@ -11,11 +11,24 @@
       <li class="nav-item active">
         <a class="nav-link" href="/">Home</a>
       </li>
+      {{#if currentUser}}
+      <!-- link to my profile '/me' -->
+      <li class="nav-item">
+        <a class="nav-link" href="/me">My Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Log Out</a>
+      </li>
+     
+      {{else}}
+       <!-- login and sign up links -->
       <li class="nav-item">
         <a class="nav-link" href="/sign-up">Sign Up</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/login">Log In</a>
+      {{/if}}
+      
       </li>
     </ul>
   </div>

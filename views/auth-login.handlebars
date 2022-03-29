@@ -1,10 +1,13 @@
 <div class="row">
   <div class="col-lg-6 offset-lg-3 mt-5">
     <h3>Login</h3>
+    {{#if error}}
+      <div class="alert alert-danger">{{ error }}</div>
+    {{/if}}
     <form action="/login" method="post">
       {{> auth-form }}
       <div class="text-right">
-        <button type="submit" class="btn btn-primary" name="button">Save</button>
+        <button type="submit" class="btn btn-primary" name="button">Submit</button>
       </div>
     </form>
   </div>
