@@ -6,11 +6,27 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const Handlebars = require('handlebars');
+
 const {
   allowInsecurePrototypeAccess,
 } = require('@handlebars/allow-prototype-access');
 
 const models = require('./db/models');
+const hbs = exphbs.create({
+  handlebars: allowInsecurePrototypeAccess(Handlebars),
+  defaultLayout: 'main',
+  helpers: {
+    if_eq: function (a, b, opts) {
+      if (a === b) {
+        return opts.fn(this);
+      }
+      return opts.inverse(this);
+    }
+  }
+});
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 // Middlewares
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -51,14 +67,11 @@ app.use((req, res, next) => {
   }
 });
 
-app.engine(
-  'handlebars',
-  exphbs.engine({
-    defaultLayout: 'main',
-    handlebars: allowInsecurePrototypeAccess(Handlebars),
-  })
-);
-app.set('view engine', 'handlebars');
+
+
+
+
+
 
 require('./controllers/events')(app, models);
 require('./controllers/rsvps')(app, models);

@@ -1,7 +1,10 @@
 <div class="row mt-5">
     <div class="col-lg-6 offset-lg-3">
-        <h1>Reviews</h1>
-        <a href="/events/new">New Event</a>
+        {{#if currentUser}}
+            <!-- Things to display if user is logged in -->
+            <h1>Reviews</h1>
+            <a href="/events/new">New Event</a>
+        {{/if}}
         <h1>Events</h1>
         {{#each events}}
         <div class="card mt-3">
@@ -10,7 +13,6 @@
                 <h5 class="card-title">{{this.title}}</h5>
                 <p class="card-text">{{this.desc}}</p>
                 <div class="d-flex justify-content-end">
-                    <a href="#" class="btn btn-success mr-2">RSVP</a>
                     <a href="/events/{{this.id}}" class="btn btn-primary">View</a>
                 </div>
             </div>

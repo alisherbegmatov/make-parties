@@ -61,4 +61,16 @@ app.post('/login', (req, res, next) => {
         // comment the above line in once you have error messaging setup (step 15 below)
         return res.redirect('/');
     });
+
+  app.get('/me', (req, res) => {
+    console.log(req.user)
+    models.User.findByPk(req.user.id)
+      .then((user) => {
+        res.render('myprofile', { user: user });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+  );
 };

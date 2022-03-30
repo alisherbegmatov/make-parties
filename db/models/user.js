@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'User',
   });
   User.associate = function(models) {
-  
+    User.hasMany(models.Event);
   }
   User.addHook('beforeCreate', async function(user) {
     const salt = await bcrypt.genSalt(10); //whatever number you want
