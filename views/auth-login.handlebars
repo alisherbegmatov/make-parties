@@ -2,7 +2,7 @@
   <div class="col-lg-6 offset-lg-3 mt-5">
     <h3>Login</h3>
     {{#if error}}
-      <div class="alert alert-danger">{{ error }}</div>
+    <div class="alert alert-danger">{{ error }}</div>
     {{/if}}
     <form action="/login" method="post">
       {{> auth-form }}
